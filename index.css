@@ -12,7 +12,7 @@ body {
 main {
   max-width: 25em;
   margin: 0 auto 0;
-  padding: 1em;
+  padding: 2em;
 }
 
 @media (min-width: 40rem) {
