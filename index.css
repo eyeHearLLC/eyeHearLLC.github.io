@@ -52,6 +52,10 @@ h3 span {
   margin-left: -1.45em;
 }
 
+h4 {
+  margin: 0;
+}
+
 p, ul {
   margin: .25em 0 .5em;
   padding: 0;
