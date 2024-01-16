@@ -2,6 +2,6 @@
 
 Our Website
 
-©2023 eyeHear, LLC
+©2024 eyeHear, LLC
 All Rights Reserved
 eyeHear is a trademark of eyeHear, LLC
