@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>eyeSpeed</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="icon.svg
+    "
+    />
+    <meta
+      name="description"
+      content="eyeSpeed: See your speed on your iPhone in big clear numbers. Simple, Private, and Reliable. No Data Tracking, Ever."
+    />
+    <style>
+      /* Embed PPNeueMachina Font for Headers and Buttons */
+      @font-face {
+        font-family: "PPNeueMachina";
+        src: url("./PPNeueMachina-PlainUltrabold.woff2") format("woff2"),
+          url("./PPNeueMachina-PlainUltrabold.woff") format("woff"),
+          url("./PPNeueMachina-PlainUltrabold.otf") format("opentype");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      :root {
+        --brand-primary: #42fd72;
+        --brand-primary-intense: #8bffa9;
+        --brand-secondary: #24432a;
+        --brand-secondary-intense: #192f1e;
+        /* Color Variables */
+        --background-color: #101f13;
+        --text-color: #ffffff;
+        --button-text-color: #000000;
+
+        /* Font Variables */
+        --header-font: "PPNeueMachina", -apple-system, BlinkMacSystemFont, Arial,
+          sans-serif;
+        /* Updated Body Font to use Apple's San Francisco via system font stack */
+        --body-font: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+        /* Updated Button Font to use SF Rounded on Apple devices */
+        --button-font: "SF Pro Rounded", ui-rounded, "Arial Rounded", Arial,
+          sans-serif;
+      }
+
+      /* Global Styles */
+      body {
+        background-color: var(--background-color);
+        background-image: linear-gradient(black, var(--background-color));
+        background-attachment: fixed;
+        color: var(--text-color);
+        font-family: var(--body-font);
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Header (Hero) Styles */
+      #hero {
+        color: var(--brand-primary);
+      }
+
+      /* Section Styles */
+      section {
+        padding: 20px;
+      }
+
+      /* Footer Styles */
+      #footer {
+        text-align: center;
+        padding: 10px;
+        color: var(--text-color);
+        font-family: var(--body-font);
+      }
+      a:not(.button),
+      a:not(.button):active,
+      a:not(.button):visited {
+        color: var(--text-color);
+      }
+
+      /* Apply header font to all h2 elements */
+      h1,
+      h2 {
+        font-family: var(--header-font);
+        font-weight: 900;
+      }
+
+      .button {
+        display: inline-block; /* Ensure <a> behaves like a block element */
+        text-decoration: none; /* Remove underline from links */
+        background-color: var(--brand-primary);
+        color: var(--button-text-color);
+        font-family: var(
+          --button-font
+        ); /* Inherits SF Rounded on Apple, PPNeueMachina otherwise */
+        font-weight: 800;
+        border: none;
+        padding: 8px 16px;
+        cursor: pointer;
+        font-size: 1rem; /* Optional: Adjust as needed */
+        border-radius: 8px; /* Optional: Add rounded corners for aesthetic */
+        transition: background-color 0.3s, outline 0.3s; /* Smooth transitions */
+      }
+      .button:focus {
+        outline: 2px solid var(--button-text-color);
+        outline-offset: 2px;
+      }
+      .button:hover {
+        background-color: var(
+          --brand-primary-intense
+        ); /* Slightly darker shade for hover */
+      }
+
+      .section__content {
+        max-width: 560px;
+        margin: 0 auto;
+      }
+
+      #header {
+        border-bottom: ;
+      }
+      .header__content {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px;
+        align-items: center;
+      }
+      .header__logo {
+        display: flex;
+        gap: 6px;
+      }
+      .header__logo-icon {
+        width: 46px;
+        border-radius: 9px;
+      }
+      .header__logo-wordmark {
+        max-width: 96px;
+      }
+
+      #hero {
+        text-align: center;
+      }
+      .hero__speedometer-container {
+        border-bottom: 1px solid var(--brand-secondary-intense);
+        padding: 0 8px;
+      }
+      .hero__speedometer {
+        margin: 0 auto;
+        max-width: 300px;
+        height: 220px;
+        background-color: var(--background-color);
+        border-top: 8px solid var(--brand-secondary-intense);
+        border-left: 8px solid var(--brand-secondary-intense);
+        border-right: 8px solid var(--brand-secondary-intense);
+        border-bottom: 0;
+        border-radius: 48px 48px 0 0;
+        font-family: var(--button-font);
+        font-weight: 800;
+        text-align: center;
+      }
+      .hero__speedometer-speed {
+        font-size: 164px;
+      }
+      .hero__speedometer-unit {
+        margin-top: -24px;
+      }
+      .hero__download-button {
+        font-size: 24px;
+      }
+      #hero h1 {
+        font-size: 42px;
+        line-height: 1;
+        margin: 32px 0 16px;
+      }
+      #overview {
+        /* display: flex; */
+        /* flex-direction: column; */
+        /* text-align: center; */
+      }
+      .overview__image {
+        width: 128px;
+      }
+      main > *:not(#hero) .section__content {
+        margin-top: 32px;
+      }
+      .section__content h2,
+      .section__content h3 {
+        margin: 0;
+      }
+      .section__content p {
+        margin: 8px 0;
+        line-height: 1.5;
+      }
+      .section__content h3 span {
+        display: inline-block;
+        font-size: 32px;
+        margin-bottom: 4px;
+      }
+      .section__content .button {
+        margin-top: 8px;
+      }
+      .focus {
+        border-radius: 32px;
+        background-color: var(--brand-secondary-intense);
+        padding: 32px;
+      }
+    </style>
+  </head>
+  <body>
+    <header id="header">
+      <div class="section__content header__content">
+        <div class="header__logo">
+          <img src="./icon.svg" alt="eyeSpeed Icon" class="header__logo-icon" />
+          <img
+            src="./wordmark.svg"
+            alt="eyeSpeed Wordmark"
+            class="header__logo-wordmark"
+          />
+        </div>
+        <div class="header__download">
+          <a href="#" class="button header__download-button">Download</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="hero">
+        <div class="section__content hero__content">
+          <div class="hero__speedometer-container">
+            <div class="hero__speedometer">
+              <div class="hero__speedometer-speed">42</div>
+              <div class="hero__speedometer-unit">mph</div>
+            </div>
+          </div>
+          <h1>Watch Your Speed</h1>
+          <a href="#" class="button hero__download-button">Download Now</a>
+          <p>Simple, Private, and Reliable.<br />No Data Tracking, Ever.</p>
+        </div>
+      </section>
+
+      <section id="overview">
+        <div class="section__content">
+          <h2>Stay focused on the road ahead</h2>
+          <p>
+            No distractions, no long setup, no ads, no clutter, no nonsense.
+            Just you and your speed.
+          </p>
+          <p>
+            I built eyeSpeed because I didn't like how busy the other
+            speedometer apps were. Cluttered with ads, childish graphics, and
+            irrelevant information. Even worse, I didn't like the idea that many
+            sell your location. So I sat down and built the app I wanted: no
+            distractions, just you and your speed.
+          </p>
+        </div>
+
+        <div class="section__content">
+          <h3><span>📏</span><br />Seamless Unit Switching</h3>
+          <p>Need mph or kph? A quick tap is all it takes.</p>
+          <p>
+            <em
+              >Protip: Great for JDM and Euro imports that don't have mph on the
+              speedometer.</em
+            >
+          </p>
+        </div>
+
+        <div class="section__content">
+          <h3><span>🙈🙉🙊</span><br />Your Data Stays Yours</h3>
+          <p>
+            No data is collected or shared with eyeSpeed. I don't what to know
+            where you went or when.
+          </p>
+        </div>
+
+        <div class="section__content focus">
+          <h3><span>💵</span><br />One-Time Payment, No Hidden Costs</h3>
+          <p>
+            Again, no nonsense. Get eyeSpeed for a one-time payment of just
+            $1.99. No in-app, no subscriptions, I won't ask you for more money
+            later.
+          </p>
+          <a href="#" class="button privacy__download-button">Download Now</a>
+        </div>
+      </section>
+
+      <section id="support">
+        <div class="section__content">
+          <h2>Need help?</h2>
+          <p>Got questions or need help? You can message me directly.</p>
+          <a
+            href="https://support.eyehear.app"
+            class="button support__download-button"
+            >Get Support</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer">
+      <div class="section__content">
+        <p>
+          ©2024 Product of eyeHear, LLC<br /><a href="../privacy.html"
+            >Privacy Policy</a
+          >
+          | <a href="https://support.eyehear.app">Support</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
